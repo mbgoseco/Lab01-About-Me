@@ -4,11 +4,12 @@ namespace About_Me
 {
     class Program
     {
-        static int correct = 0;        // Counter for questions answered correctly
-        static bool tryValid = false;      // Flag used to continue or break out of loops containing try/catch blocks until valid input is entered 
         static void Main(string[] args)
         {
+            int correct = 0;        // Counter for questions answered correctly
+            bool tryValid = false;      // Flag used to continue or break out of loops containing try/catch blocks until valid input is entered 
             Console.WriteLine("Welcome to the About Me Quiz!");
+            Console.WriteLine("-----------------------------");
 
             // Question 1. Code will loop until no exception is thrown
             string q1 = "";
@@ -33,8 +34,9 @@ namespace About_Me
             {
                 Console.WriteLine("Wrong!");
             }
-
             tryValid = false;   // Resets flag to false for next question
+
+            // Question 2
             uint q2 = 0;
             while (!tryValid)
             {
@@ -58,33 +60,64 @@ namespace About_Me
             {
                 Console.WriteLine("Wrong!");
             }
+            tryValid = false;
+
+            // Question 3
+            byte q3 = 0;
+            while (!tryValid)
+            {
+                try
+                {
+                    tryValid = true;
+                    q3 = StatesVisited();
+                }
+                catch (Exception e)
+                {
+                    tryValid = false;
+                    Console.WriteLine(e.Message);
+                }
+            }
+            if (q3 == 12)
+            {
+                Console.WriteLine("Correct! I've visited 12 different states in my life so far. And counting!");
+                correct++;
+            }
+            else
+            {
+                Console.WriteLine("Wrong!");
+            }
+            tryValid = false;
+
+
         }
 
         public static string FavColor()
         {
-            Console.Write("What is my favorite color? ");
+            Console.Write("Question 1: What is my favorite color? ");
             string ans = Console.ReadLine();
             return ans;
         }
 
         public static uint Birthyear()
         {
-            Console.Write("In what year was I born? ");
+            Console.Write("Question 2: In what year was I born? ");
             string ans = Console.ReadLine();
             return Convert.ToUInt32(ans);
         }
 
-        //public static string StatesVisted()
-        //{
-
-        //}
+        public static byte StatesVisited()
+        {
+            Console.Write("Question 3: How many states in the US have I visited? ");
+            string ans = Console.ReadLine();
+            return Convert.ToByte(ans);
+        }
 
         //public static string FavSmashChar()
         //{
 
         //}
 
-        //public static bool CakeOrPie(bool isCake)
+        //public static bool CakeOrPie()
         //{
 
         //}
