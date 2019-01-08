@@ -8,4 +8,4 @@ A quiz designed to test a user's knowledge of myself. The app will ask a user fi
 2. Press F5 to start the program (or ctrl+F5 to start without debugging)
 
 ### Screenshot
-//![screenshot here](filename)
+![screenshot](screenshot.png)
