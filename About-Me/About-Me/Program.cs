@@ -88,14 +88,44 @@ namespace About_Me
             }
             tryValid = false;
 
-
+            // Question 4
+            string q4 = "";
+            while (!tryValid)
+            {   
+                try
+                {
+                    tryValid = true;
+                    q4 = FavSmashChar();
+                }
+                catch (Exception e)
+                {
+                    tryValid = false;
+                    Console.WriteLine(e.Message);
+                }
+            }
+            if (q4.ToLower() == "samus")
+            {
+                Console.WriteLine("Correct! Samus is my main girl. Come see me if you wanna get blasted!");
+                correct++;
+            }
+            else
+            {
+                Console.WriteLine("Wrong!");
+            }
+            tryValid = false;
         }
 
         public static string FavColor()
         {
             Console.Write("Question 1: What is my favorite color? ");
             string ans = Console.ReadLine();
-            return ans;
+            if (ans.Length == 0)    // Checks if user entered no input in a string type method and throws exception if so
+            {
+                throw new ArgumentException("No answer given. Please enter your answer.");  // Exception thrown for empty string instead of answer being automatically wrong
+            } else
+            {
+                return ans;
+            }
         }
 
         public static uint Birthyear()
@@ -112,10 +142,19 @@ namespace About_Me
             return Convert.ToByte(ans);
         }
 
-        //public static string FavSmashChar()
-        //{
-
-        //}
+        public static string FavSmashChar()
+        {
+            Console.Write("Question 4: Who is my favorite Smash Bros character? ");
+            string ans = Console.ReadLine();
+            if (ans.Length == 0)
+            {
+                throw new ArgumentException("No answer given. Please enter your answer.");
+            }
+            else
+            {
+                return ans;
+            }
+        }
 
         //public static bool CakeOrPie()
         //{
