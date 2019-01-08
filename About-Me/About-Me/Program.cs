@@ -23,7 +23,6 @@ namespace About_Me
                 {
                     tryValid = false;   // Flag is set to false again on exception so loop will continue
                     Console.WriteLine(e.Message);
-                    throw;
                 }
             }
             if (q1.ToLower() == "yellow")
@@ -35,7 +34,30 @@ namespace About_Me
                 Console.WriteLine("Wrong!");
             }
 
-             uint q2;
+            tryValid = false;   // Resets flag to false for next question
+            uint q2 = 0;
+            while (!tryValid)
+            {
+                try
+                {
+                    tryValid = true;
+                    q2 = Birthyear();
+                }
+                catch (Exception e)
+                {
+                    tryValid = false;
+                    Console.WriteLine(e.Message);
+                }
+            }
+            if (q2 == 1982)
+            {
+                Console.WriteLine("Correct! I was born in August of 1982 which makes me 36.");
+                correct++;
+            }
+            else
+            {
+                Console.WriteLine("Wrong!");
+            }
         }
 
         public static string FavColor()
@@ -45,10 +67,12 @@ namespace About_Me
             return ans;
         }
 
-        //public static int Birthyear()
-        //{
-
-        //}
+        public static uint Birthyear()
+        {
+            Console.Write("In what year was I born? ");
+            string ans = Console.ReadLine();
+            return Convert.ToUInt32(ans);
+        }
 
         //public static string StatesVisted()
         //{
