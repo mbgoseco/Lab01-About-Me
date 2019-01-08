@@ -26,9 +26,9 @@ namespace About_Me
                     Console.WriteLine(e.Message);
                 }
             }
-            if (q1.ToLower() == "red")
+            if (q1.ToLower() == "yellow")
             {
-                Console.WriteLine("Correct! I love the color red!");
+                Console.WriteLine("Correct! I love the color yellow!");
                 correct++;      // correct answer counter increments when user input matches correct answer
             } else
             {
