@@ -26,9 +26,9 @@ namespace About_Me
                     Console.WriteLine(e.Message);
                 }
             }
-            if (q1.ToLower() == "yellow")
+            if (q1.ToLower() == "red")
             {
-                Console.WriteLine("Correct! I love the color yellow!");
+                Console.WriteLine("Correct! I love the color red!");
                 correct++;      // correct answer counter increments when user input matches correct answer
             } else
             {
@@ -113,6 +113,34 @@ namespace About_Me
                 Console.WriteLine("Wrong!");
             }
             tryValid = false;
+
+            // Question 5
+            bool q5 = false;
+            while (!tryValid)
+            {
+                try
+                {
+                    tryValid = true;
+                    q5 = CakeOrPie();
+                }
+                catch (Exception e)
+                {
+                    tryValid = false;
+                    Console.WriteLine(e.Message);
+                }
+            }
+            if (q5 == true)
+            {
+                Console.WriteLine("Correct! Cake is totally better than pie!");
+                correct++;
+            }
+            else
+            {
+                Console.WriteLine("Wrong!");
+            }
+
+            Console.WriteLine("-----------------------------");
+            Console.WriteLine($"Quiz complete! You got {correct} correct!");
         }
 
         public static string FavColor()
@@ -156,9 +184,12 @@ namespace About_Me
             }
         }
 
-        //public static bool CakeOrPie()
-        //{
-
-        //}
+        public static bool CakeOrPie()
+        {
+            Console.Write("Question 5: True or False? I think cake is better than pie. ");
+            string ans = Console.ReadLine();
+            bool result = Convert.ToBoolean(ans.ToLower());
+            return result;
+        }
     }
 }
