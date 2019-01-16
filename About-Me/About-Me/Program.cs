@@ -25,6 +25,10 @@ namespace About_Me
                     tryValid = false;   // Flag is set to false again on exception so loop will continue
                     Console.WriteLine(e.Message);
                 }
+                finally
+                {
+                    Console.Write("Result: ");
+                }
             }
             if (q1.ToLower() == "yellow")
             {
@@ -49,6 +53,10 @@ namespace About_Me
                 {
                     tryValid = false;
                     Console.WriteLine(e.Message);
+                }
+                finally
+                {
+                    Console.Write("Result: ");
                 }
             }
             if (q2 == 1982)
@@ -76,6 +84,10 @@ namespace About_Me
                     tryValid = false;
                     Console.WriteLine(e.Message);
                 }
+                finally
+                {
+                    Console.Write("Result: ");
+                }
             }
             if (q3 == 12)
             {
@@ -102,6 +114,10 @@ namespace About_Me
                     tryValid = false;
                     Console.WriteLine(e.Message);
                 }
+                finally
+                {
+                    Console.Write("Result: ");
+                }
             }
             if (q4.ToLower() == "samus")
             {
@@ -127,6 +143,10 @@ namespace About_Me
                 {
                     tryValid = false;
                     Console.WriteLine(e.Message);
+                }
+                finally
+                {
+                    Console.Write("Result: ");
                 }
             }
             if (q5 == true)
